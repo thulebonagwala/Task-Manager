@@ -5,8 +5,22 @@ const connectDB = require("./config/db");
 
 const app = express();
 
+const authRoutes = require("./routes/authRoutes")
+
+// Middleware to handle CORS
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL || "*",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
 // Connect Database
 connectDB();
+
+// Routes
+app.use("/api/auth", authRoutes);
 
 // Start Server
 const PORT = process.env.PORT || 5000;
