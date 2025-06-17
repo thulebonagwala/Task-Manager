@@ -7,4 +7,10 @@ export const API_PATHS = {
     GET_PROFILE: "/api/auth/profile", // Get logged-in user details
     LOGIN: "/api/auth/login", // Authenticate user & return JWT token
   },
+
+    TASKS: {
+    GET_USER_DASHBOARD_DATA: "/api/tasks/user-dashboard-data", // Get User Dashboard Data
+  },
 };
+
+
