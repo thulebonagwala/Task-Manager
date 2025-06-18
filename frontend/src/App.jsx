@@ -6,6 +6,8 @@ import Login from './pages/Auth/Login'
 import SignUp from './pages/Auth/SignUp'
 import UserProvider, { UserContext } from "./context/userContext";
 
+import UserDashboard from "./pages/User/UserDashboard";
+
 function App() {
 
   return (
@@ -14,6 +16,8 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signUp" element={<SignUp />} />
+
+          <Route path="/user/dashboard" element={<UserDashboard />} />
         </Routes>
       </Router>
     </UserProvider>
