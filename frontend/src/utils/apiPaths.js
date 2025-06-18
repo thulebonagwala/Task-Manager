@@ -10,6 +10,8 @@ export const API_PATHS = {
 
     TASKS: {
     GET_USER_DASHBOARD_DATA: "/api/tasks/user-dashboard-data", // Get User Dashboard Data
+    GET_ALL_TASKS: "/api/tasks", // Get all tasks (Admin: all, User: only assigned tasks)
+    
   },
 };
 
