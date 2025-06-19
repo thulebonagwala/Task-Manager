@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../utils/axiosInstance";
 import { API_PATHS } from "../../utils/apiPaths";
 import { LuFileSpreadsheet } from "react-icons/lu";
-import TaskStatusTabs from "../../components/TaskStatusTabs";
-import TaskCard from "../../components/Cards/TaskCard";
+import TaskStatusTabs from "../../component/TaskStatusTabs";
+import TaskCard from "../../component/Cards/TaskCard";
 
 const MyTasks = () => {
   const [allTasks, setAllTasks] = useState([]);
