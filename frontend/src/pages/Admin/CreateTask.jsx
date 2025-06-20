@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import DashboardLayout from "../../components/layouts/DashboardLayout";
+import DashboardLayout from "../../component/layouts/DashboardLayout";
 import { PRIORITY_DATA } from "../../utils/data";
 import axiosInstance from "../../utils/axiosInstance";
 import { API_PATHS } from "../../utils/apiPaths";
@@ -7,12 +7,12 @@ import toast from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router-dom";
 import moment from "moment";
 import { LuTrash2 } from "react-icons/lu";
-import SelectDropdown from "../../components/Inputs/SelectDropdown";
-import SelectUsers from "../../components/Inputs/SelectUsers";
-import TodoListInput from "../../components/Inputs/TodoListInput";
-import AddAttachmentsInput from "../../components/Inputs/AddAttachmentsInput";
-import DeleteAlert from "../../components/DeleteAlert";
-import Modal from "../../components/Modal";
+import SelectDropdown from "../../component/Inputs/SelectDropdown";
+import SelectUsers from "../../component/Inputs/SelectUsers";
+import TodoListInput from "../../component/Inputs/TodoListInput";
+import AddAttachmentsInput from "../../component/Inputs/AddAttachmentsInput";
+import DeleteAlert from "../../component/DeleteAlert";
+import Modal from "../../component/Modal";
 
 const CreateTask = () => {
   const location = useLocation();
