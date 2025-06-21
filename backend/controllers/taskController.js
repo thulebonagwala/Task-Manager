@@ -159,6 +159,22 @@ const updateTask = async (req, res) => {
   }
 };
 
+// @desc    Delete a task (Admin only)
+// @route   DELETE /api/tasks/:id
+// @access  Private (Admin)
+const deleteTask = async (req, res) => {
+  try {
+    const task = await Task.findById(req.params.id);
+
+    if (!task) return res.status(404).json({ message: "Task not found" });
+
+    await task.deleteOne();
+    res.json({ message: "Task deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
+};
+
 // @desc    Dashboard Data (User-specific)
 // @route   GET /api/tasks/user-dashboard-data
 // @access  Private
