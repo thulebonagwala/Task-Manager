@@ -89,6 +89,44 @@ const getTaskById = async (req, res) => {
   }
 };
 
+// @desc    Create a new task (Admin only)
+// @route   POST /api/tasks/
+// @access  Private (Admin)
+const createTask = async (req, res) => {
+  try {
+    const {
+      title,
+      description,
+      priority,
+      dueDate,
+      assignedTo,
+      attachments,
+      todoChecklist,
+    } = req.body;
+
+    if (!Array.isArray(assignedTo)) {
+      return res
+        .status(400)
+        .json({ message: "assignedTo must be an array of user IDs" });
+    }
+
+    const task = await Task.create({
+      title,
+      description,
+      priority,
+      dueDate,
+      assignedTo,
+      createdBy: req.user._id,
+      todoChecklist,
+      attachments,
+    });
+
+    res.status(201).json({ message: "Task created successfully", task });
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
+};
+
 // @desc    Dashboard Data (User-specific)
 // @route   GET /api/tasks/user-dashboard-data
 // @access  Private
