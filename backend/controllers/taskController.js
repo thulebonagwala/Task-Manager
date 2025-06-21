@@ -71,6 +71,23 @@ const getTasks = async (req, res) => {
     res.status(500).json({ message: "Server error", error: error.message });
   }
 };
+// @desc    Get task by ID
+// @route   GET /api/tasks/:id
+// @access  Private
+const getTaskById = async (req, res) => {
+  try {
+    const task = await Task.findById(req.params.id).populate(
+      "assignedTo",
+      "name email profileImageUrl"
+    );
+
+    if (!task) return res.status(404).json({ message: "Task not found" });
+
+    res.json(task);
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
+};
 
 // @desc    Dashboard Data (User-specific)
 // @route   GET /api/tasks/user-dashboard-data
