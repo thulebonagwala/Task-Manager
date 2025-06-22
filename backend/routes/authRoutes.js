@@ -7,5 +7,6 @@ const router = express.Router();
 router.post("/register", registerUser);   // Register User
 router.post("/login", loginUser);         // Login User
 router.get("/profile", protect, getUserProfile);  // Get User Profile
+router.put("/profile", protect, updateUserProfile); // Update Profile
 
 module.exports = router;
