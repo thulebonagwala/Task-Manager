@@ -245,7 +245,7 @@ const updateTaskChecklist = async (req, res) => {
       "name email profileImageUrl"
     );
 
-    res.json({ message: "Task checklist updated", task:updatedTask });
+    res.json({ message: "Task checklist updated", task: updatedTask });
   } catch (error) {
     res.status(500).json({ message: "Server error", error: error.message });
   }
@@ -338,7 +338,7 @@ const getUserDashboardData = async (req, res) => {
       status: { $ne: "Completed" },
       dueDate: { $lt: new Date() },
     });
-    
+
 
     // Task distribution by status
     const taskStatuses = ["Pending", "In Progress", "Completed"];
@@ -393,6 +393,13 @@ const getUserDashboardData = async (req, res) => {
 };
 
 module.exports = {
-  getUserDashboardData,
   getTasks,
+  getTaskById,
+  createTask,
+  updateTask,
+  deleteTask,
+  updateTaskStatus,
+  updateTaskChecklist,
+  getDashboardData,
+  getUserDashboardData,
 };
