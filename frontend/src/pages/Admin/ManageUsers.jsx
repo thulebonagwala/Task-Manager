@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import DashboardLayout from "../../components/layouts/DashboardLayout";
+import DashboardLayout from "../../component/layouts/DashboardLayout";
 import { API_PATHS } from "../../utils/apiPaths";
 import axiosInstance from "../../utils/axiosInstance";
 import { LuFileSpreadsheet } from "react-icons/lu";
-import UserCard from "../../components/Cards/UserCard";
+import UserCard from "../../component/Cards/UserCard";
 
 const ManageUsers = () => {
   const [allUsers, setAllUsers] = useState([]);
