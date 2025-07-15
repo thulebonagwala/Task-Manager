@@ -46,7 +46,7 @@ const SignUp = () => {
 
     //SignUp API Call
     try {
-
+      
       // Upload image if present
       if (profilePic) {
         const imgUploadRes = await uploadImage(profilePic);
