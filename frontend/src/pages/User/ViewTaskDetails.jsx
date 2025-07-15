@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axiosInstance from "../../utils/axiosInstance";
 import { API_PATHS } from "../../utils/apiPaths";
-import DashboardLayout from "../../component/layouts/DashboardLayout";
+import DashboardLayout from "../../component/Layouts/DashboardLayout";
 import AvatarGroup from "../../component/AvatarGroup";
 import moment from "moment";
 import { LuSquareArrowOutUpRight } from "react-icons/lu";
